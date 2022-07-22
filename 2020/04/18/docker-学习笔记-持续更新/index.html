@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="列出了docker常见的命令，及一些个人总结的知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker 学习笔记 | 持续更新~~~">
+<meta property="og:url" content="https://weiguangchao.github.io/2020/04/18/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="列出了docker常见的命令，及一些个人总结的知识点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/weiguangchao/assets@master/img/791982538.png">
+<meta property="article:published_time" content="2020-04-18T12:27:05.000Z">
+<meta property="article:modified_time" content="2020-09-23T06:53:52.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/weiguangchao/assets@master/img/791982538.png"><title>docker 学习笔记 | 持续更新~~~ | Hexo</title><link ref="canonical" href="https://weiguangchao.github.io/2020/04/18/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">docker 学习笔记 | 持续更新~~~</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-04-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body"><p>列出了docker常见的命令，及一些个人总结的知识点</p>
+<span id="more"></span>
+
+
+        <h2 id="镜像命令"   >
+          <a href="#镜像命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h2>
+      <blockquote>
+<p>查看本地镜像</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><p><code>-a</code>：显示所有镜像</p>
+</li>
+<li><p><code>-q</code>：显示镜像id</p>
+</li>
+</ul>
+<blockquote>
+<p>查找</p>
+</blockquote>
+<p>在dockerhub上寻找</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search tomcat</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>-s</code>：列出收藏数大于指定数量</li>
+</ul>
+<blockquote>
+<p>下载镜像</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat</span><br></pre></td></tr></table></div></figure>
+
+<p>默认是tomcat:latest</p>
+<blockquote>
+<p>删除镜像</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi tomcat / 镜像ID</span><br></pre></td></tr></table></div></figure>
+
+<p>删除单个的情况，版本号不写默认是latest，删除多个可以用<code>空格</code>隔开</p>
+<ul>
+<li><code>-f</code>：强制删除</li>
+</ul>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -qa)</span><br></pre></td></tr></table></div></figure>
+
+<p>删除本机全部镜像</p>
+<blockquote>
+<p>生成镜像</p>
+</blockquote>
+<p>方式1：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit tomcat 当前正在运行的容器实例 命名空间/镜像名:版本编号</span><br></pre></td></tr></table></div></figure>
+
+<p>根据容器实例生成镜像</p>
+<ul>
+<li><code>-m</code>：描述信息</li>
+<li><code>-a</code>：作者</li>
+</ul>
+<p>方式2：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f Dockerfile路径 -t 命名空间/镜像名 .</span><br></pre></td></tr></table></div></figure>
+
+<p>根据Dockerfile生成镜像</p>
+<ul>
+<li><p><code>-f</code>：Dockerfile路径</p>
+</li>
+<li><p><code>-t</code>：镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。</p>
+</li>
+<li><p><code>.</code>：当前路径</p>
+</li>
+</ul>
+<blockquote>
+<p>查看镜像历史</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">history</span> 镜像<span class="built_in">id</span></span><br></pre></td></tr></table></div></figure>
+
+<hr>
+
+        <h2 id="容器命令"   >
+          <a href="#容器命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h2>
+      <blockquote>
+<p>创建一个新的容器并运行一个命令</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run centos</span><br></pre></td></tr></table></div></figure>
+
+<p>本地有镜像的话则运行本地镜像，本地没有镜像的话则会去hub上pull</p>
+<ul>
+<li><code>-i</code>：已交互的方式运行容器，通常都是配合**-t**参数使用</li>
+<li><code>-t</code>：为容器重新分配一个伪终端</li>
+<li><code>--name</code>：别名</li>
+<li><code>-d</code>：后台运行容器，并返回容器id，即启动守护式容器</li>
+<li><code>-p</code>：主机端口:docker容器端口</li>
+<li><code>-P</code>：随机分配端口</li>
+<li><code>-v</code>：绑定一个卷，主机路径:容器路径</li>
+<li><code>--rm</code>：运行结束时自动销毁</li>
+<li><code>--restart</code>：设置容器重启策略，no，默认策略，在容器退出时不重启容器；on-failure，在容器非正常退出时（退出状态非0），才会重启容器；on-failure:3，在容器非正常退出时重启容器，最多重启3次；always，在容器退出时总是重启容器；unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器</li>
+</ul>
+<p>值得说明的是，docker容器实例在后台运行，就必须要有一个前台进程，如果容器运行的不是那些一直挂起的命令，那么docker则会自动退出</p>
+<blockquote>
+<p>启动一个或多个已经被停止的容器</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start centos</span><br></pre></td></tr></table></div></figure>
+
+<p>通常用来启动已经停止的容器</p>
+<blockquote>
+<p>列出当前运行的所有容器</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>-a</code>：正在运行和历史上运行过得容器</li>
+<li><code>-l</code>：上次运行的容器实例</li>
+<li><code>-n</code>：最近n个创建的容器</li>
+<li><code>-q</code>：只显示容器id</li>
+</ul>
+<blockquote>
+<p>退出容器</p>
+</blockquote>
+<p>方式1：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></div></figure>
+
+<p>关闭容器，无法再次进入</p>
+<p>方式2：</p>
+<p>Ctrl + p + q</p>
+<p>关闭容器之后还可以再次进入</p>
+<blockquote>
+<p>重启容器</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart centos</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>停止容器</p>
+</blockquote>
+<p>方式1：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop centos</span><br></pre></td></tr></table></div></figure>
+
+<p>正常停止</p>
+<p>方式2：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">kill</span> centos</span><br></pre></td></tr></table></div></figure>
+
+<p>强制停止，类似于拔电源</p>
+<blockquote>
+<p>删除容器</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> centos</span><br></pre></td></tr></table></div></figure>
+
+<p>删除单个</p>
+<ul>
+<li><code>-f</code>：强制删除</li>
+</ul>
+<p>删除多个</p>
+<p>方式1：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -aq)</span><br></pre></td></tr></table></div></figure>
+
+<p>方式：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -aq | xargs docker <span class="built_in">rm</span> -f</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>查看日志</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs centos</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>-t</code>：时间</li>
+<li><code>-f</code>：跟随最新的日志</li>
+<li><code>--tail</code>：显示最后多少条</li>
+</ul>
+<blockquote>
+<p>查看容器内运行的进程</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top centos</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>查看容器内部的细节</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect centos</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>重新进入docker进行交互</p>
+</blockquote>
+<p>方式1：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach centos</span><br></pre></td></tr></table></div></figure>
+
+<p>直接进入容器启动的命令行终端，不会启动新的进程</p>
+<p>方式2：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> centos</span><br></pre></td></tr></table></div></figure>
+
+<p>不进入容器却能够和容器交互</p>
+<p>如果使用<strong>docker exec centos -it &#x2F;bin&#x2F;bash</strong>的话，则效果和<strong>docker attach centos</strong>相同</p>
+<blockquote>
+<p>拷贝文件到宿主机</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">cp</span> centos:/tmp/yum.log /root</span><br></pre></td></tr></table></div></figure>
+
+<p>将docker中<code>/tmp/yum.log</code>文件拷贝到宿主机<code>/root</code>中</p>
+<hr>
+
+        <h2 id="数据卷"   >
+          <a href="#数据卷" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2>
+      <blockquote>
+<p>添加数据卷</p>
+</blockquote>
+<p>方式1：</p>
+<p>使用直接命令的方式</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v /宿主机绝对路径:/容器内目录 镜像名</span><br></pre></td></tr></table></div></figure>
+
+<p>容器退出后，主机修改共享文件后，docker容器中文件也会被修改</p>
+<blockquote>
+<p>查看数据卷和容器是否绑定成功</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器<span class="built_in">id</span></span><br></pre></td></tr></table></div></figure>
+
+<p>在返回的json串中，查看volume属性</p>
+<blockquote>
+<p>设置权限</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v /宿主机绝对路径:/容器内目录:ro 镜像名</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>ro</code>：read only（只读）</li>
+</ul>
+<blockquote>
+<p>出现Permission denied错误</p>
+</blockquote>
+<p>增加<code>--privileged=true</code>参数</p>
+<p>方式2：</p>
+<p>使用Dokcerfile添加，Dockerfile是对docker中镜像的描述。在Dockerfile中增加一下代码<code>VOLUME [&quot;/data1&quot;, &quot;/data2&quot;]</code>，值得注意的是， 通过 VOLUME 指令创建的挂载点，无法指定主机上对应的目录，是自动生成的</p>
+<blockquote>
+<p>拷贝文件到容器</p>
+</blockquote>
+<p>方式1:</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">cp</span> /www/runoob 96f7f14e99ab:/www/</span><br></pre></td></tr></table></div></figure>
+
+<p>将主机&#x2F;www&#x2F;runoob目录拷贝到容器96f7f14e99ab的&#x2F;www目录下</p>
+<p>方式2:</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">cp</span> /www/runoob 96f7f14e99ab:/www</span><br></pre></td></tr></table></div></figure>
+
+<p>将主机&#x2F;www&#x2F;runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www</p>
+<p>方式3:</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">cp</span>  96f7f14e99ab:/www /tmp/</span><br></pre></td></tr></table></div></figure>
+
+<p>将容器96f7f14e99ab的&#x2F;www目录拷贝到主机的&#x2F;tmp目录中</p>
+<hr>
+
+        <h2 id="数据卷容器"   >
+          <a href="#数据卷容器" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h2>
+      <p>使用一个容器作为父容器，专门用来存放数据</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --volumes-from 父容器<span class="built_in">id</span> 子容器<span class="built_in">id</span></span><br></pre></td></tr></table></div></figure>
+
+<p>容器之间配置信息的传递，数据卷的生命周期一直持续到没有容器使用它为止</p>
+<hr>
+
+        <h2 id="Dockerfile"   >
+          <a href="#Dockerfile" class="heading-link"><i class="fas fa-link"></i></a><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2>
+      
+        <h3 id="保留字指令"   >
+          <a href="#保留字指令" class="heading-link"><i class="fas fa-link"></i></a><a href="#保留字指令" class="headerlink" title="保留字指令"></a>保留字指令</h3>
+      <ul>
+<li><code>FROM</code>：当前镜像是基于那个镜像的</li>
+<li><code>MAINTAINER</code>：镜像作者及作者邮箱</li>
+<li><code>RUN</code>：容器构建时所需要执行的命令</li>
+<li><code>EXPOSE</code>：当前容器对外暴露出的端口</li>
+<li><code>WORKDIR</code>：创建容器后，终端默认进来的工作目录</li>
+<li><code>ARG</code>：构建参数和 <code>ENV</code> 的效果一样，都是设置环境变量。所不同的是，<code>ARG</code> 所设置的构建环境的环境变量，在将来容器运行时是不会存在这些环境变量的。但是不要因此就使用 <code>ARG</code> 保存密码之类的信息，因为 <code>docker history</code> 还是可以看到所有值的。</li>
+<li><code>ENV</code>：设置环境变量，在这之后的<code>RUN</code>指令都可以使用该变量</li>
+<li><code>ADD</code>：拷贝（<code>COPY</code>） + 解压缩</li>
+<li><code>COPY</code>：直接拷贝</li>
+</ul>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY src dest</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>VOLUME</code>：容器数据卷，主机路径:容器路径</li>
+<li><code>CMD</code>：容器启动时要运行的命令。<code>CMD</code>指令可以有多个，但只有最后一个会生效，<code>CMD</code>会被<strong>docker run</strong>之后的参数替换（命令参数会被覆盖）</li>
+<li><code>ENTRYPOINT</code>：容器启动时要运行的命令。（命令参数会被追加组合）</li>
+<li><code>ONBUILD</code>：父镜像在子镜像<code>build</code>时被触发</li>
+</ul>
+
+        <h2 id="实战篇"   >
+          <a href="#实战篇" class="heading-link"><i class="fas fa-link"></i></a><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h2>
+      
+        <h3 id="自定义tomcat"   >
+          <a href="#自定义tomcat" class="heading-link"><i class="fas fa-link"></i></a><a href="#自定义tomcat" class="headerlink" title="自定义tomcat"></a>自定义tomcat</h3>
+      
+        <h4 id="创建Dockerfile文件"   >
+          <a href="#创建Dockerfile文件" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建Dockerfile文件" class="headerlink" title="创建Dockerfile文件"></a>创建Dockerfile文件</h4>
+      <p>内容：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 父镜像</span></span><br><span class="line">FROM centos:7</span><br><span class="line"></span><br><span class="line"><span class="comment"># 作者信息</span></span><br><span class="line">MAINTAINER weiguangchao&lt;3409885610@qq.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制并解压</span></span><br><span class="line">ADD jdk-8u231-linux-x64.tar.gz /usr/local</span><br><span class="line">ADD apache-tomcat-9.0.27.tar.gz /usr/local</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置工作目录</span></span><br><span class="line">WORKDIR /usr/local/apache-tomcat-9.0.27</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置环境变量</span></span><br><span class="line">ENV JAVA_HOME /usr/local/jdk1.8.0_231</span><br><span class="line">ENV CATALINA_HOME /usr/local/apache-tomcat-9.0.27</span><br><span class="line">ENV PATH <span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$CATALINA_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置对外暴露端口</span></span><br><span class="line">EXPOSE 8080</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装结束后运行的命令</span></span><br><span class="line">CMD startup.sh &amp;&amp; <span class="built_in">tail</span> -f /usr/local/apache-tomcat-9.0.27/logs/catalina.out</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="生成镜像"   >
+          <a href="#生成镜像" class="heading-link"><i class="fas fa-link"></i></a><a href="#生成镜像" class="headerlink" title="生成镜像"></a>生成镜像</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f Dockerfile2 -t weiguangchao/mytomcat:1.0 .</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="启动tomcat"   >
+          <a href="#启动tomcat" class="heading-link"><i class="fas fa-link"></i></a><a href="#启动tomcat" class="headerlink" title="启动tomcat"></a>启动tomcat</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-d \</span><br><span class="line">-p 9999:8080 \</span><br><span class="line">-v /root/webapps:/usr/local/apache-tomcat-9.0.27/webapps \</span><br><span class="line">-v /root/logs/:/usr/local/apache-tomcat-9.0.27/logs \</span><br><span class="line">容器ID</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="创建index-html"   >
+          <a href="#创建index-html" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建index-html" class="headerlink" title="创建index.html"></a>创建index.html</h4>
+      <p>在<code>~/webapps</code>创建<code>ROOT/index.html</code>文件</p>
+<p>内容：</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>ocg, I can do it!<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="测试"   >
+          <a href="#测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#测试" class="headerlink" title="测试"></a>测试</h4>
+      <p>浏览器地址栏输入 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://192.168.153.130:9999/index.html" >http://192.168.153.130:9999/index.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiguangchao/assets@master/img/791982538.png"></p>
+
+        <h4 id="提交到hub"   >
+          <a href="#提交到hub" class="heading-link"><i class="fas fa-link"></i></a><a href="#提交到hub" class="headerlink" title="提交到hub"></a>提交到hub</h4>
+      <p>这里以阿里云为例，其实阿里云镜像服务里面已经提供了相关操作的代码了</p>
+<blockquote>
+<p>步骤1：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login --username=阿里云用户名 registry.cn-shenzhen.aliyuncs.com</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>步骤2：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag [ImageId] registry.cn-shenzhen.aliyuncs.com/weiguangchao/mytomcat:[镜像版本号]</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>步骤3：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push registry.cn-shenzhen.aliyuncs.com/weiguangchao/mytomcat:[镜像版本号]</span><br></pre></td></tr></table></div></figure>
+
+<p> 根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。 </p>
+
+        <h4 id="拉取镜像"   >
+          <a href="#拉取镜像" class="heading-link"><i class="fas fa-link"></i></a><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-shenzhen.aliyuncs.com/weiguangchao/mytomcat:[镜像版本号]</span><br></pre></td></tr></table></div></figure></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://weiguangchao.github.io">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://weiguangchao.github.io/2020/04/18/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">https://weiguangchao.github.io/2020/04/18/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://weiguangchao.github.io/tags/docker/">docker</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/04/19/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-nginx-%E7%9A%84-location-%E5%AD%97%E6%AE%B5/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">彻底搞懂 nginx 的 location 字段</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/01/29/Spring-Cloud-OAuth2-0%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83/"><span class="paginator-prev__text">Spring Cloud OAuth2.0认证与授权</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="gitalk-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">
+          镜像命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">
+          容器命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">3.</span> <span class="toc-text">
+          数据卷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%B7%E5%AE%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">
+          数据卷容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile"><span class="toc-number">5.</span> <span class="toc-text">
+          Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E5%AD%97%E6%8C%87%E4%BB%A4"><span class="toc-number">5.1.</span> <span class="toc-text">
+          保留字指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%AF%87"><span class="toc-number">6.</span> <span class="toc-text">
+          实战篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89tomcat"><span class="toc-number">6.1.</span> <span class="toc-text">
+          自定义tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BADockerfile%E6%96%87%E4%BB%B6"><span class="toc-number">6.1.1.</span> <span class="toc-text">
+          创建Dockerfile文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%95%9C%E5%83%8F"><span class="toc-number">6.1.2.</span> <span class="toc-text">
+          生成镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8tomcat"><span class="toc-number">6.1.3.</span> <span class="toc-text">
+          启动tomcat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAindex-html"><span class="toc-number">6.1.4.</span> <span class="toc-text">
+          创建index.html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">6.1.5.</span> <span class="toc-text">
+          测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%88%B0hub"><span class="toc-number">6.1.6.</span> <span class="toc-text">
+          提交到hub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F"><span class="toc-number">6.1.7.</span> <span class="toc-text">
+          拉取镜像</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"></script><script>function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
+
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: '849b51dea68b64d947b6',
+    clientSecret: 'c5fd981cde4d285e00a189314eda02ff506689a8',
+    repo: 'https://github.com/weiguangchao/weiguangchao.github.io.git',
+    owner: 'weiguangchao',
+    admin: [''],
+    distractionFreeMode: 'false',
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+}
+
+if (false) {
+  loadGitalk();
+} else {
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
