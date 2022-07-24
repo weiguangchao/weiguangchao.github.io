@@ -175,127 +175,127 @@
 
   <url>
     <loc>https://weiguangchao.github.io/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://weiguangchao.github.io/tags/CentOS7/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/docker/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://weiguangchao.github.io/tags/JVM/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://weiguangchao.github.io/tags/Java%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/CentOS7/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/docker/</loc>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://weiguangchao.github.io/tags/JavaWeb/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://weiguangchao.github.io/tags/Java/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/Spring-AOP/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://weiguangchao.github.io/tags/Linux/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/MyBatis/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/SQL/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/SQL%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/SpringMVC/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/Spring/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/Spring-Cloud/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/OAuth2/</loc>
-    <lastmod>2022-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiguangchao.github.io/tags/nginx/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://weiguangchao.github.io/tags/RabbitMQ/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/MyBatis/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/SQL/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/SQL%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/Spring-AOP/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/Spring/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/Spring-Cloud/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/OAuth2/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/SpringMVC/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiguangchao.github.io/tags/nginx/</loc>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -303,22 +303,22 @@
 
   
   <url>
-    <loc>https://weiguangchao.github.io/categories/Linux/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <loc>https://weiguangchao.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://weiguangchao.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <loc>https://weiguangchao.github.io/categories/Linux/</loc>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://weiguangchao.github.io/categories/Java/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
