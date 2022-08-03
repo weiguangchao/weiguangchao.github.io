@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="FeJ1DwXOvRGYep1l98kD_pAPmrhRSJ-MIhaZ3-ZFsDM"><meta name="description" content="整理我当“站长”这几年常用的Linux命令。持续更新～～～">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:url" content="https://weiguangchao.github.io/2022/07/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Write casually">
+<meta property="og:description" content="整理我当“站长”这几年常用的Linux命令。持续更新～～～">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-27T03:10:46.000Z">
+<meta property="article:modified_time" content="2022-08-03T07:02:21.090Z">
+<meta property="article:author" content="Guangchao Wei">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="常用命令">
+<meta name="twitter:card" content="summary"><title>Linux常用命令 | Write casually</title><link ref="canonical" href="https://weiguangchao.github.io/2022/07/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9009265977328545" async=""></script><script src="https://www.googletagmanager.com/gtag/js?id=G-10S1N7KHK5" async=""></script><script>if (window.location.hostname !== 'localhost') {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-10S1N7KHK5');
+}</script><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: ["google","bing","baidu"],
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Linux常用命令</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-07-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-08-03</span></span><span class="post-meta-item post-meta-item--visitors"><span class="post-meta-item__icon"><i class="fas fa-eye"></i></span><span class="post-meta-item__info">阅读次数</span><span class="post-meta-item__value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body"><p>整理我当“站长”这几年常用的Linux命令。持续更新～～～</p>
+<span id="more"></span>
+
+
+        <h1 id="防火墙"   >
+          <a href="#防火墙" class="heading-link"><i class="fas fa-link"></i></a><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h1>
+      
+        <h2 id="查看防火墙状态"   >
+          <a href="#查看防火墙状态" class="heading-link"><i class="fas fa-link"></i></a><a href="#查看防火墙状态" class="headerlink" title="查看防火墙状态"></a>查看防火墙状态</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="停止firewall"   >
+          <a href="#停止firewall" class="heading-link"><i class="fas fa-link"></i></a><a href="#停止firewall" class="headerlink" title="停止firewall"></a>停止firewall</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="设置开机启动"   >
+          <a href="#设置开机启动" class="heading-link"><i class="fas fa-link"></i></a><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> firewalld</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="禁止开机启动"   >
+          <a href="#禁止开机启动" class="heading-link"><i class="fas fa-link"></i></a><a href="#禁止开机启动" class="headerlink" title="禁止开机启动"></a>禁止开机启动</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="开放端口"   >
+          <a href="#开放端口" class="heading-link"><i class="fas fa-link"></i></a><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=1935/tcp --permanent</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="关闭端口"   >
+          <a href="#关闭端口" class="heading-link"><i class="fas fa-link"></i></a><a href="#关闭端口" class="headerlink" title="关闭端口"></a>关闭端口</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --remove-port=5672/tcp --permanent</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="重启防火墙"   >
+          <a href="#重启防火墙" class="heading-link"><i class="fas fa-link"></i></a><a href="#重启防火墙" class="headerlink" title="重启防火墙"></a>重启防火墙</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="创建swap分区"   >
+          <a href="#创建swap分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建swap分区" class="headerlink" title="创建swap分区"></a>创建swap分区</h1>
+      <p>我看网上有两种创建swap分区的方式，这里采用的是使用文件创建swap的方式。（分区创建swap、文件创建swap）</p>
+
+        <h2 id="1-添加swap分区"   >
+          <a href="#1-添加swap分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-添加swap分区" class="headerlink" title="1. 添加swap分区"></a>1. 添加swap分区</h2>
+      <p>在添加swap分区之前我们可以了解下当前系统swap是否存在以及使用情况，可用： </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br><span class="line">swapon -s</span><br></pre></td></tr></table></div></figure>
+
+<p>了解硬盘使用情况（一般&#x2F;dev&#x2F;vda1为挂载硬盘）：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -hal</span><br></pre></td></tr></table></div></figure>
+
+<p>使用dd命令创建名为swapfile 的swap交换文件（文件名和目录任意）:</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero  of=/var/swapfile  bs=1024  count=2097152</span><br></pre></td></tr></table></div></figure>
+
+<p>或</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero  of=/var/swapfile  bs=1024  count=2048k  </span><br></pre></td></tr></table></div></figure>
+
+<p>​	科普：if(即输入文件,input file)，of(即输出文件,output file)。dev&#x2F;zero是Linux的一种特殊字符设备(输入设备)，可以用来创建一个指定长度用于初始化的空文件，如临时交换文件，该设备无穷尽地提供0，可以提供任何你需要的数目。 bs&#x3D;1024  ：单位数据块（block）同时读入&#x2F;输出的块字节大小为1024  个字节即1KB，bs(即block size)。count&#x3D;2048000  ：数据块（block）数量为2048000 ，即2048000个1KB。可以计算swap分区的容量为：1KB *2097152&#x3D;1KB <em>1024(k)<em>1024</em>2&#x3D;2097152&#x3D;2G。（dd命令里的单位M表示1024</em>1024,k表示1024）。</p>
+<p>​	回车后，会执行2g的读写操作，系统会卡一段时间，耐心等待执行结果。</p>
+<p>执行完毕，对交换文件格式化并转换为swap分区：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /var/swapfile</span><br></pre></td></tr></table></div></figure>
+
+<p>​	挂载并激活分区：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /var/swapfile</span><br></pre></td></tr></table></div></figure>
+
+<p>​	执行以上命令可能会出现：“不安全的权限 0644，建议使用 0600”类似提示，不要紧张，实际上已经激活了，可以忽略提示，也可以听从系统的建议修改下权限： </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -R 0600 /var/swapfile</span><br></pre></td></tr></table></div></figure>
+
+<p>​	这时候可以用 free -h 或 swapon -s命令查看新swap分区是否正常添加并激活使用。</p>
+<p>修改 fstab 配置，设置开机自动挂载该分区： </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br></pre></td></tr></table></div></figure>
+
+<p>​	在fstab文件末尾追加如下内容后:wq!保存即可： </p>
+<p><code>/var/swapfile  swap  swap  defaults  0  0</code> </p>
+<p>或直接对fstab进行echo追加: </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span>  <span class="string">&quot;/var/swapfile   swap  swap  defaults  0  0&quot;</span> &gt;&gt;  /etc/fstab</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="2-删除某swap分区"   >
+          <a href="#2-删除某swap分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-删除某swap分区" class="headerlink" title="2. 删除某swap分区"></a>2. 删除某swap分区</h2>
+      <p>先停止正在使用swap分区： </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapoff /var/swapfile</span><br></pre></td></tr></table></div></figure>
+
+<p>删除swap分区文件</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf /var/swapfile</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="3-更改Swap配置（进阶级）"   >
+          <a href="#3-更改Swap配置（进阶级）" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-更改Swap配置（进阶级）" class="headerlink" title="3. 更改Swap配置（进阶级）"></a>3. <strong>更改Swap配置（进阶级）</strong></h2>
+      <p>​	swappiness值（0-100），系统对swap分区的依赖程度，越高则越倾向于使用swap分区。 </p>
+<p>​	当然，高度依赖swap会造成物理内存远未使用完，就使用swap分区，我们知道swap分区性能远不如物理内存，这反而降低了系统性能，违背了我们创建swap分区的初衷。<br>​    我们希望在物理内存即将满荷时再使用swap，这就决定了swappiness值一般为10-60为宜，固态硬盘可以偏高些。<br>​    查看当前的swappiness数值： </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/sys/vm/swappiness</span><br></pre></td></tr></table></div></figure>
+
+<p>​	修改swappiness值，这里以50为例。</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl vm.swappiness=50</span><br></pre></td></tr></table></div></figure>
+
+<p>​	若希望vm.swappiness&#x3D;50永久生效，则需要修改sysctl配置文件，直接echo追加配置内容，重启系统后即可生效： </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;vm.swappiness = 50&quot;</span> &gt;&gt; /etc/sysctl.conf</span><br></pre></td></tr></table></div></figure>
+
+<p>参考链接：</p>
+<blockquote>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/ausboyue/article/details/73433990" >https://blog.csdn.net/ausboyue/article/details/73433990</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+
+        <h1 id="配置免密登陆"   >
+          <a href="#配置免密登陆" class="heading-link"><i class="fas fa-link"></i></a><a href="#配置免密登陆" class="headerlink" title="配置免密登陆"></a>配置免密登陆</h1>
+      
+        <h2 id="生成ssh密钥"   >
+          <a href="#生成ssh密钥" class="heading-link"><i class="fas fa-link"></i></a><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h2>
+      <p>我是Mac系统，其他系统类似</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br></pre></td></tr></table></div></figure>
+
+<p>若<code>.ssh</code>文件夹不存在则创建</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p .ssh</span><br></pre></td></tr></table></div></figure>
+
+<p>生成ssh密钥</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -m PEM -t rsa</span><br></pre></td></tr></table></div></figure>
+
+<p>将<code>id_rsa.pub</code>上传到服务器，我这里则是上传到的是服务器的<code>/root</code></p>
+
+        <h2 id="服务器配置"   >
+          <a href="#服务器配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2>
+      <p>这里以<code>root</code>用户为例</p>
+<p>若<code>~/.ssh</code>文件夹不存在，则创建</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">mkdir</span> -p .ssh</span><br></pre></td></tr></table></div></figure>
+
+<p>将证书内容写入到文件</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></div></figure>
+
+<p>修改ssh配置文件</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"><span class="comment">#配置远程登录</span></span><br><span class="line">RSAAuthentication <span class="built_in">yes</span></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span></span><br><span class="line"><span class="comment">#禁用密码登录(可选)</span></span><br><span class="line">PasswordAuthentication <span class="built_in">yes</span> 改为 PasswordAuthentication no</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="重启ssh服务"   >
+          <a href="#重启ssh服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#重启ssh服务" class="headerlink" title="重启ssh服务"></a>重启ssh服务</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="安装docker、docker-compose"   >
+          <a href="#安装docker、docker-compose" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装docker、docker-compose" class="headerlink" title="安装docker、docker-compose"></a>安装docker、docker-compose</h1>
+      
+        <h2 id="docker"   >
+          <a href="#docker" class="heading-link"><i class="fas fa-link"></i></a><a href="#docker" class="headerlink" title="docker"></a>docker</h2>
+      
+        <h3 id="1-安装"   >
+          <a href="#1-安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3>
+      <p>使用<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://get.daocloud.io/#install-docker" >DaoCloud</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>国内镜像快速安装docker、docker-compose</p>
+<p>Docker 的 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://get.docker.com/" >安装资源文件 </a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>存放在Amazon S3，会间歇性连接失败。所以安装Docker的时候，会比较慢。<br>你可以通过执行下面的命令，高速安装Docker。</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></div></figure>
+
+<p>适用于Ubuntu，Debian,Centos等大部分Linux，会3小时同步一次Docker官方资源</p>
+
+        <h3 id="2-配置国内镜像"   >
+          <a href="#2-配置国内镜像" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-配置国内镜像" class="headerlink" title="2. 配置国内镜像"></a>2. 配置国内镜像</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"><span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;https://0b27f0a81a00f3560fbdc00ddd2f99e0.mirror.swr.myhuaweicloud.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://ypzju6vq.mirror.aliyuncs.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="docker-compose"   >
+          <a href="#docker-compose" class="heading-link"><i class="fas fa-link"></i></a><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://docs.docker.com/compose/install/" >Docker Compose </a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>存放在Git Hub，不太稳定。<br>你可以也通过执行下面的命令，高速安装Docker Compose。</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/v2.8.0/docker-compose-`<span class="built_in">uname</span> -s`-`<span class="built_in">uname</span> -m` &gt; /usr/local/bin/docker-compose</span><br><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></div></figure>
+
+<p>你可以通过修改URL中的版本，可以自定义您的需要的版本。</p>
+
+        <h1 id="tar包解-x2F-压缩"   >
+          <a href="#tar包解-x2F-压缩" class="heading-link"><i class="fas fa-link"></i></a><a href="#tar包解-x2F-压缩" class="headerlink" title="tar包解&#x2F;压缩"></a>tar包解&#x2F;压缩</h1>
+      <p>打包：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar --exclude <span class="string">&#x27;node_modules&#x27;</span> --exclude <span class="string">&#x27;.idea&#x27;</span> --exclude <span class="string">&#x27;logs&#x27;</span> -cvzf 压缩文件.tar 源文件</span><br></pre></td></tr></table></div></figure>
+
+<p>–exclude：排除文件&#x2F;文件夹</p>
+<p>解包：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf 压缩文件.tar</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="查看网络连接"   >
+          <a href="#查看网络连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#查看网络连接" class="headerlink" title="查看网络连接"></a>查看网络连接</h1>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss -s</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="查看内存占用"   >
+          <a href="#查看内存占用" class="heading-link"><i class="fas fa-link"></i></a><a href="#查看内存占用" class="headerlink" title="查看内存占用"></a>查看内存占用</h1>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></div></figure>
+
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://weiguangchao.github.io">Guangchao Wei</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://weiguangchao.github.io/2022/07/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">https://weiguangchao.github.io/2022/07/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://weiguangchao.github.io/tags/Linux/">Linux</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://weiguangchao.github.io/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/08/03/%E6%88%91%E7%9A%84Mac%E8%BD%AF%E4%BB%B6%E6%8A%98%E8%85%BE%E4%B9%8B%E6%97%85/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">我的Mac软件折腾之旅</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/07/26/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"><span class="paginator-prev__text">IDEA常用快捷键</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="gitalk-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.</span> <span class="toc-text">
+          防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%98%B2%E7%81%AB%E5%A2%99%E7%8A%B6%E6%80%81"><span class="toc-number">1.1.</span> <span class="toc-text">
+          查看防火墙状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2firewall"><span class="toc-number">1.2.</span> <span class="toc-text">
+          停止firewall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-number">1.3.</span> <span class="toc-text">
+          设置开机启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-number">1.4.</span> <span class="toc-text">
+          禁止开机启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.5.</span> <span class="toc-text">
+          开放端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.6.</span> <span class="toc-text">
+          关闭端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.7.</span> <span class="toc-text">
+          重启防火墙</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAswap%E5%88%86%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">
+          创建swap分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0swap%E5%88%86%E5%8C%BA"><span class="toc-number">2.1.</span> <span class="toc-text">
+          1. 添加swap分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%A0%E9%99%A4%E6%9F%90swap%E5%88%86%E5%8C%BA"><span class="toc-number">2.2.</span> <span class="toc-text">
+          2. 删除某swap分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9B%B4%E6%94%B9Swap%E9%85%8D%E7%BD%AE%EF%BC%88%E8%BF%9B%E9%98%B6%E7%BA%A7%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">
+          3. 更改Swap配置（进阶级）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86"><span class="toc-number">3.</span> <span class="toc-text">
+          配置免密登陆</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90ssh%E5%AF%86%E9%92%A5"><span class="toc-number">3.1.</span> <span class="toc-text">
+          生成ssh密钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">
+          服务器配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AFssh%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.3.</span> <span class="toc-text">
+          重启ssh服务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker%E3%80%81docker-compose"><span class="toc-number">4.</span> <span class="toc-text">
+          安装docker、docker-compose</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker"><span class="toc-number">4.1.</span> <span class="toc-text">
+          docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.1.</span> <span class="toc-text">
+          1. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F"><span class="toc-number">4.1.2.</span> <span class="toc-text">
+          2. 配置国内镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose"><span class="toc-number">4.2.</span> <span class="toc-text">
+          docker-compose</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar%E5%8C%85%E8%A7%A3-x2F-%E5%8E%8B%E7%BC%A9"><span class="toc-number">5.</span> <span class="toc-text">
+          tar包解&#x2F;压缩</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">
+          查看网络连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">
+          查看内存占用</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Write casually</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/weiguangchao" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">18</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">23</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Guangchao Wei</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.2.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"><div class="search-btns">使用搜索：<span class="search-btns-item search-btns-item--google"><i class="fab fa-google"></i>谷歌</span><span class="search-btns-item search-btns-item--bing"><i></i>必应</span><span class="search-btns-item search-btns-item--baidu"><i></i>百度</span></div></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"></script><script>function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
+
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: '849b51dea68b64d947b6',
+    clientSecret: 'c5fd981cde4d285e00a189314eda02ff506689a8',
+    repo: 'weiguangchao.github.io',
+    owner: 'weiguangchao',
+    admin: ['weiguangchao'],
+    distractionFreeMode: 'false',
+    language: 'zh-CN'
+  });
+  gitalk.render('gitalk-container');
+}
+
+if (false) {
+  loadGitalk();
+} else {
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script><script type="application/json" src="/search.json"></script></body></html>
