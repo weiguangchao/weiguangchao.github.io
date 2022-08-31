@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wggc.xyz/2022/08/31/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    
+    <lastmod>2022-08-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wggc.xyz/2022/08/11/%E7%9C%8B%E5%BE%97%E6%87%82%E7%9A%84-%E6%B5%B7%E6%98%8E%E7%A0%81%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E6%A0%A1%E9%AA%8C%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2022-08-11</lastmod>
@@ -218,14 +227,14 @@
 
   
   <url>
-    <loc>https://wggc.xyz/tags/CentOS7/</loc>
+    <loc>https://wggc.xyz/tags/Hexo/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wggc.xyz/tags/docker/</loc>
+    <loc>https://wggc.xyz/tags/GitHub/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -288,20 +297,6 @@
   </url>
   
   <url>
-    <loc>https://wggc.xyz/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2022-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wggc.xyz/tags/Java/</loc>
-    <lastmod>2022-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wggc.xyz/tags/MyBatis/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -316,7 +311,7 @@
   </url>
   
   <url>
-    <loc>https://wggc.xyz/tags/Spring-AOP/</loc>
+    <loc>https://wggc.xyz/tags/Java/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -331,6 +326,13 @@
   
   <url>
     <loc>https://wggc.xyz/tags/SQL%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wggc.xyz/tags/Spring-AOP/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -359,6 +361,27 @@
   
   <url>
     <loc>https://wggc.xyz/tags/SpringMVC/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wggc.xyz/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wggc.xyz/tags/CentOS7/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wggc.xyz/tags/docker/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -395,7 +418,7 @@
 
   
   <url>
-    <loc>https://wggc.xyz/categories/Linux/</loc>
+    <loc>https://wggc.xyz/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -424,6 +447,13 @@
   
   <url>
     <loc>https://wggc.xyz/categories/Java/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wggc.xyz/categories/Linux/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
