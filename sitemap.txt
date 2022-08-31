@@ -41,15 +41,15 @@ https://wggc.xyz/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 https://wggc.xyz/tags/MyBatis/
 https://wggc.xyz/tags/SQL/
 https://wggc.xyz/tags/SQL%E9%9D%A2%E8%AF%95/
-https://wggc.xyz/tags/Spring-AOP/
 https://wggc.xyz/tags/Spring/
 https://wggc.xyz/tags/Spring-Cloud/
 https://wggc.xyz/tags/OAuth2/
 https://wggc.xyz/tags/SpringMVC/
-https://wggc.xyz/tags/nginx/
+https://wggc.xyz/tags/Spring-AOP/
 https://wggc.xyz/tags/Mac%E8%BD%AF%E4%BB%B6/
 https://wggc.xyz/tags/%E6%B5%B7%E6%98%8E%E7%A0%81/
 https://wggc.xyz/tags/%E6%A0%A1%E9%AA%8C%E7%A0%81/
+https://wggc.xyz/tags/nginx/
 https://wggc.xyz/categories/Linux/
 https://wggc.xyz/categories/%E5%8D%9A%E5%AE%A2/
 https://wggc.xyz/categories/GitHub/

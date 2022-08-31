@@ -353,13 +353,6 @@
   </url>
   
   <url>
-    <loc>https://wggc.xyz/tags/Spring-AOP/</loc>
-    <lastmod>2022-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wggc.xyz/tags/Spring/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -388,7 +381,7 @@
   </url>
   
   <url>
-    <loc>https://wggc.xyz/tags/nginx/</loc>
+    <loc>https://wggc.xyz/tags/Spring-AOP/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -410,6 +403,13 @@
   
   <url>
     <loc>https://wggc.xyz/tags/%E6%A0%A1%E9%AA%8C%E7%A0%81/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wggc.xyz/tags/nginx/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
